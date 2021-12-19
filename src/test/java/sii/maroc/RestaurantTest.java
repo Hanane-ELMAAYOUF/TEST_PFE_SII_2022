@@ -16,7 +16,6 @@ import static org.fest.assertions.api.Assertions.assertThat;
      *   if there is not quantity it means that the ingredient is in stock and unlimited. (here it concern olive oil and pepper)
      */
 public class RestaurantTest {
-
     @Test
     public void shouldServeTomatoMozzarellaSalad(){
         Restaurant restaurant = new Restaurant("6 balls Mozzarella", "20 tomatoes", "olive oil", "pepper");
@@ -32,7 +31,20 @@ public class RestaurantTest {
 // Allowed modification zone starts here
     @Test
     public void shouldFailWhenOutOfStock(){
-        Assert.fail();
+    	
+    	Restaurant restaurant = new Restaurant("6 balls Mozzarella", "20 tomatoes", "olive oil", "pepper");
+       
+        try
+        {
+        	Ticket ticket1 = restaurant.order("9 Tomato Mozzarella Salad");
+        	
+        }
+        catch (UnvailableDishException ex)
+        {
+        
+        }
+
+        
     }
 // Allowed modification zone ends here
 
